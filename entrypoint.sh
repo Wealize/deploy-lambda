@@ -17,13 +17,6 @@ SAM_CMD='sam'                               # Path to AWS SAM Exec
 ###################
 GITHUB_WORKSPACE="${GITHUB_WORKSPACE}"            # Github Workspace
 
-###################
-# AWS Secret Vars #
-###################
-AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY}"             # aws_access_key_id to auth
-# shellcheck disable=SC2034
-AWS_SECRET_ACCESS_KEY="${AWS_SECRET_KEY}"         # aws_secret_access_key to auth
-
 ##############
 # Built Vars #
 ##############
@@ -118,7 +111,7 @@ DeployTemplate() {
     ERROR_CAUSE="Failed to find created package:[$AWS_PACKAGED]"
   fi
 
-  SAM_DEPLOY_CMD=$(cd "$GITHUB_WORKSPACE"; "$SAM_CMD" deploy --template-file "$GITHUB_WORKSPACE/$AWS_PACKAGED")
+  SAM_DEPLOY_CMD=$(cd "$GITHUB_WORKSPACE"; "$SAM_CMD" deploy --template-file "$GITHUB_WORKSPACE/$AWS_PACKAGED" --resolve-s3)
 
   ERROR_CODE=$?
 
