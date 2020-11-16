@@ -82,8 +82,7 @@ BuidApp() {
   echo "--------------------------------------------"
   echo "Building the SAM application..."
 
-  pipenv install
-  pipenv install -d
+  poetry install
 
   BUILD_CMD=$(cd "$GITHUB_WORKSPACE" ; "$SAM_CMD" build --use-container)
 

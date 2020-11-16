@@ -1,6 +1,6 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'Deploy Lambda'
+description: 'Deploy a lambda using python'
+author: 'Wealize'
 runs:
   using: 'docker'
   image: 'Dockerfile'
