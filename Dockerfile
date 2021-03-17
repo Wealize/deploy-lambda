@@ -1,4 +1,4 @@
-FROM amazon/aws-sam-cli-build-image-python3.8:latest
+FROM python:3.8-slim
 
 COPY LICENSE README.md /
 
@@ -9,6 +9,7 @@ RUN apt-get update && \
     pip install poetry
 
 COPY entrypoint.sh /entrypoint.sh
+
 RUN ls
 
 ENTRYPOINT ["/entrypoint.sh"]
