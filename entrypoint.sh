@@ -84,13 +84,16 @@ BuidApp() {
 
   poetry install
 
-  ls
+  ls 
 
   BUILD_CMD=$(cd "$GITHUB_WORKSPACE" ; "$SAM_CMD" build --use-container --debug)
 
   ERROR_CODE=$?
 
   if [ $ERROR_CODE -ne 0 ]; then
+
+    ls /tmp/samcli/source/
+
     echo "ERROR! Failed to build SAM application!"
     echo "ERROR:[$BUILD_CMD]"
 
