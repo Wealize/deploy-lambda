@@ -82,6 +82,8 @@ BuidApp() {
   echo "--------------------------------------------"
   echo "Building the SAM application..."
 
+  poetry install
+
   BUILD_CMD=$(cd "$GITHUB_WORKSPACE" ; "$SAM_CMD" build --use-container)
 
   ERROR_CODE=$?
