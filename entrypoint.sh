@@ -84,6 +84,8 @@ BuidApp() {
 
   poetry install
 
+  ls
+
   BUILD_CMD=$(cd "$GITHUB_WORKSPACE" ; "$SAM_CMD" build --use-container --debug)
 
   ERROR_CODE=$?
