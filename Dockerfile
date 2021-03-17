@@ -9,5 +9,6 @@ RUN apt-get update && \
     pip install poetry
 
 COPY entrypoint.sh /entrypoint.sh
+COPY requirements.txt /tmp/samcli/source/requirements.txt
 
 ENTRYPOINT ["/entrypoint.sh"]
